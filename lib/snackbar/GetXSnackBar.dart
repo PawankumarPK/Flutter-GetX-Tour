@@ -14,7 +14,22 @@ class GetXSnackbar extends StatelessWidget {
             color: Colors.white
           ),),
           onPressed: (){
-            Get.snackbar("Snackbar Title", "Hey I'm Snackbar");
+            Get.snackbar("Snackbar Title", "Hey I'm Snackbar",
+              snackPosition: SnackPosition.BOTTOM,
+              messageText: const Text("Another Message",
+                style: TextStyle(color: Colors.redAccent),
+              ),
+              colorText: Colors.green,
+              backgroundColor: Colors.blueGrey,
+              borderRadius: 30,
+              margin: const EdgeInsets.all(20),
+              maxWidth: 250,
+              animationDuration: const Duration(milliseconds: 3000),
+              backgroundGradient: const LinearGradient(colors: [Colors.blue, Colors.green])
+
+
+
+            );
             
           },
         ),
