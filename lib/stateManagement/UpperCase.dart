@@ -11,7 +11,7 @@ class UpperCase extends StatelessWidget {
   //final student = Student(name: "Tom",age: 25).obs;
 
   /// Creating instance of controller
-  MyController myController = Get.put(MyController());
+  //MyController myController = Get.put(MyController());
 
   UpperCase({Key? key}) : super(key: key);
 
@@ -21,11 +21,14 @@ class UpperCase extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
           children: [
-        Obx(() => Text(
-            "Name is ${myController.student.value.name}",
-            style: const TextStyle(fontSize: 25),
-          ),
-        ),
+            GetX<MyController>(
+              init: MyController(),
+                builder: (controller) {
+              return Text(
+                "Name is ${controller.student.value.name}",
+                style: const TextStyle(fontSize: 25),
+              );
+            }),
         const SizedBox(
           height: 16,
         ),
@@ -33,7 +36,8 @@ class UpperCase extends StatelessWidget {
           color: Colors.blue,
           child: const Text("UpperCase"),
             onPressed: (){
-              myController.changeToUppercase();
+              //myController.changeToUppercase();
+              Get.find<MyController>().changeToUppercase();
             })
       ]),
     );
