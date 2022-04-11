@@ -25,10 +25,9 @@ class GetXSnackbar extends StatelessWidget {
               margin: const EdgeInsets.all(20),
               maxWidth: 250,
               animationDuration: const Duration(milliseconds: 3000),
-              backgroundGradient: const LinearGradient(colors: [Colors.blue, Colors.green])
-
-
-
+              backgroundGradient: const LinearGradient(colors: [Colors.blue, Colors.green],),
+              isDismissible: true,
+              forwardAnimationCurve: Curves.easeOutBack,
             );
             
           },

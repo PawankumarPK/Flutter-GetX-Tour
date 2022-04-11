@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getx_tour/snackbar/GetXScaffold.dart';
+import 'package:getx_tour/GetXScaffold.dart';
 import 'package:getx_tour/snackbar/GetXSnackBar.dart';
 
 void main() {
