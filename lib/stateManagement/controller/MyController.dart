@@ -11,4 +11,16 @@ class MyController extends GetxController{
       student?.name = student.name.toUpperCase();
     });
   }
+
+  @override
+  void onInit(){
+    print("=====>>>  Init Called");
+    super.onInit();
+  }
+
+  @override
+  void onClose(){
+    print("=====>>>  Init Called");
+    super.onClose();
+  }
 }
