@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_tour/stateManagement/Student.dart';
+import 'package:getx_tour/stateManagement/controller/MyController.dart';
 
 class UpperCase extends StatelessWidget {
 
   //var student = Student();
 
   ///Making class as observable
-  final student = Student(name: "Tom",age: 25).obs;
+  //final student = Student(name: "Tom",age: 25).obs;
+
+  /// Creating instance of controller
+  MyController myController = Get.put(MyController());
 
   UpperCase({Key? key}) : super(key: key);
 
@@ -18,7 +22,7 @@ class UpperCase extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
           children: [
         Obx(() => Text(
-            "Name is ${student.value.name}",
+            "Name is ${myController.student.value.name}",
             style: const TextStyle(fontSize: 25),
           ),
         ),
@@ -29,18 +33,18 @@ class UpperCase extends StatelessWidget {
           color: Colors.blue,
           child: const Text("UpperCase"),
             onPressed: (){
-              changeToUppercase();
+              myController.changeToUppercase();
             })
       ]),
     );
   }
 
-  void changeToUppercase(){
+  /*void changeToUppercase(){
     /// If entire class is observable
     student.update((student) {
       student?.name = student.name.toUpperCase();
     });
 
 
-  }
+  }*/
 }
