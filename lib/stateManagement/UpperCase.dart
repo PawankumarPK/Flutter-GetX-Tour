@@ -4,7 +4,10 @@ import 'package:getx_tour/stateManagement/Student.dart';
 
 class UpperCase extends StatelessWidget {
 
-  var student = Student();
+  //var student = Student();
+
+  ///Making class as observable
+  final student = Student(name: "Tom",age: 25).obs;
 
   UpperCase({Key? key}) : super(key: key);
 
@@ -15,7 +18,7 @@ class UpperCase extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
           children: [
         Obx(() => Text(
-            "Name is ${student.name.value}",
+            "Name is ${student.value.name}",
             style: const TextStyle(fontSize: 25),
           ),
         ),
@@ -33,6 +36,11 @@ class UpperCase extends StatelessWidget {
   }
 
   void changeToUppercase(){
-    student.name.value = student.name.value.toUpperCase();
+    /// If entire class is observable
+    student.update((student) {
+      student?.name = student.name.toUpperCase();
+    });
+
+
   }
 }
