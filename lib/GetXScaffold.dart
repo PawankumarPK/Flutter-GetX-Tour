@@ -4,7 +4,8 @@ import 'package:getx_tour/bottomSheet/GetXBottomSheet.dart';
 import 'package:getx_tour/dialogBox/GetXDialogBox.dart';
 import 'package:getx_tour/routeNavigation/Home.dart';
 import 'package:getx_tour/snackbar/GetXSnackBar.dart';
-import 'package:getx_tour/stateManagement/StateManagment.dart';
+import 'package:getx_tour/stateManagement/Count.dart';
+import 'package:getx_tour/stateManagement/UpperCase.dart';
 
 class GetXScaffold extends StatelessWidget {
   const GetXScaffold({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class GetXScaffold extends StatelessWidget {
     return  GetMaterialApp(
       title: "Snackbar",
       home: Scaffold(
-        body: StateManagement(),
+        body: UpperCase(),
       ),
     );
   }

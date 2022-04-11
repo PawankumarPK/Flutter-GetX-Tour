@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_tour/stateManagement/Student.dart';
 
-class StateManagement extends StatelessWidget {
-  var count = 0.obs;
+class UpperCase extends StatelessWidget {
 
-  StateManagement({Key? key}) : super(key: key);
+  var student = Student();
+
+  UpperCase({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class StateManagement extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
           children: [
         Obx(() => Text(
-            "Count value is $count",
+            "Name is ${student.name.value}",
             style: const TextStyle(fontSize: 25),
           ),
         ),
@@ -22,15 +24,15 @@ class StateManagement extends StatelessWidget {
         ),
         MaterialButton(
           color: Colors.blue,
-          child: const Text("Increment"),
+          child: const Text("UpperCase"),
             onPressed: (){
-              increment();
+              changeToUppercase();
             })
       ]),
     );
   }
 
-  void increment(){
-    count++;
+  void changeToUppercase(){
+    student.name.value = student.name.value.toUpperCase();
   }
 }
