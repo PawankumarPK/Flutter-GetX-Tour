@@ -4,7 +4,6 @@ import 'package:getx_tour/stateManagement/Student.dart';
 import 'package:getx_tour/stateManagement/controller/MyController.dart';
 
 class UpperCase extends StatelessWidget {
-
   //var student = Student();
 
   ///Making class as observable
@@ -18,14 +17,32 @@ class UpperCase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            GetX<MyController>(
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        GetBuilder<MyController>(
+            id: 'txtCount',
+            init: MyController(),
+            builder: (controller) {
+              return Text(
+                "Name is ${controller.name}",
+                style: const TextStyle(fontSize: 25),
+              );
+            }),
+        /* GetX<MyController>(
               init: MyController(),
                 builder: (controller) {
               return Text(
                 "Name is ${controller.student.value.name}",
+                style: const TextStyle(fontSize: 25),
+              );
+            }),*/
+        const SizedBox(
+          height: 16,
+        ),
+        GetBuilder<MyController>(
+            init: MyController(),
+            builder: (controller) {
+              return Text(
+                "Name is ${controller.name}",
                 style: const TextStyle(fontSize: 25),
               );
             }),
@@ -33,9 +50,9 @@ class UpperCase extends StatelessWidget {
           height: 16,
         ),
         MaterialButton(
-          color: Colors.blue,
-          child: const Text("UpperCase"),
-            onPressed: (){
+            color: Colors.blue,
+            child: const Text("UpperCase"),
+            onPressed: () {
               //myController.changeToUppercase();
               Get.find<MyController>().changeToUppercase();
             })
@@ -43,7 +60,7 @@ class UpperCase extends StatelessWidget {
     );
   }
 
-  /*void changeToUppercase(){
+/*void changeToUppercase(){
     /// If entire class is observable
     student.update((student) {
       student?.name = student.name.toUpperCase();
