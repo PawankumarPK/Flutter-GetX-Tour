@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_tour/bottomSheet/GetXBottomSheet.dart';
 import 'package:getx_tour/dialogBox/GetXDialogBox.dart';
+import 'package:getx_tour/routeNavigation/Home.dart';
 import 'package:getx_tour/snackbar/GetXSnackBar.dart';
 
 class GetXScaffold extends StatelessWidget {
@@ -12,7 +13,7 @@ class GetXScaffold extends StatelessWidget {
     return const GetMaterialApp(
       title: "Snackbar",
       home: Scaffold(
-        body: GetXBottomSheet(),
+        body: Home(),
       ),
     );
   }
