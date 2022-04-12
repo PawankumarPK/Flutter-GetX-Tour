@@ -18,15 +18,13 @@ class UpperCase extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        GetBuilder<MyController>(
-            id: 'txtCount',
-            init: MyController(),
-            builder: (controller) {
-              return Text(
-                "Name is ${controller.name}",
-                style: const TextStyle(fontSize: 25),
-              );
-            }),
+        Obx(() =>
+            Text(
+              "Name is ${Get.find<MyController>().name}",
+              style: const TextStyle(fontSize: 25),
+            ),
+        ),
+
         /* GetX<MyController>(
               init: MyController(),
                 builder: (controller) {
@@ -38,10 +36,10 @@ class UpperCase extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        Text(
+        /* Text(
           "Name is ${Get.find<MyController>().name}",
           style: const TextStyle(fontSize: 25),
-        ),
+        ),*/
         const SizedBox(
           height: 16,
         ),
