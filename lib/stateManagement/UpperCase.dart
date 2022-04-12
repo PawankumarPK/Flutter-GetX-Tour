@@ -38,14 +38,10 @@ class UpperCase extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        GetBuilder<MyController>(
-            init: MyController(),
-            builder: (controller) {
-              return Text(
-                "Name is ${controller.name}",
-                style: const TextStyle(fontSize: 25),
-              );
-            }),
+        Text(
+          "Name is ${Get.find<MyController>().name}",
+          style: const TextStyle(fontSize: 25),
+        ),
         const SizedBox(
           height: 16,
         ),
