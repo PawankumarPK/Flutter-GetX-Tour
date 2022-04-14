@@ -35,7 +35,6 @@ class ApiService{
     //  productModelFromJson(jsonString);
       final result = productModelFromJson(response.body);
       list = result;
-      print("======>>>>>  " + list.toString());
       return true;
     } else {
       print("Something went wrong");
