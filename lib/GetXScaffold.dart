@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_tour/bottomSheet/GetXBottomSheet.dart';
 import 'package:getx_tour/dialogBox/GetXDialogBox.dart';
+import 'package:getx_tour/network/productModule/views/ProductScreen.dart';
 import 'package:getx_tour/routeNavigation/Home.dart';
 import 'package:getx_tour/snackbar/GetXSnackBar.dart';
 import 'package:getx_tour/stateManagement/Count.dart';
@@ -15,10 +16,9 @@ class GetXScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GetMaterialApp(
-      initialBinding: MyControllerBinding(),
       title: "Snackbar",
       home: Scaffold(
-        body: UpperCase(),
+        body: ProductScreen(),
       ),
     );
   }

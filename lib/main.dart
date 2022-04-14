@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getx_tour/GetXScaffold.dart';
+import 'package:getx_tour/network/productModule/views/ProductScreen.dart';
 import 'package:getx_tour/snackbar/GetXSnackBar.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const GetXScaffold(),
+      home:  ProductScreen(),
     );
   }
 }
